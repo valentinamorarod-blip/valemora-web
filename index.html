@@ -56,11 +56,13 @@
     --sea-dark: #4676a8;
     --matcha: #b4b534;
     --matcha-dark: #8f9021;
+    --maroon: #7a3b3b;
+    --pink-stripe: #f3c9d6;
     --accent: var(--tangerine);
     --accent-dark: var(--tangerine-dark);
     --text: #332c22;
     --text-light: #7c7263;
-    --bg: #fffaf0;
+    --bg: #fdf6ec;
     --white: #ffffff;
     --radius: 20px;
     --shadow: 0 10px 30px rgba(240, 140, 33, 0.15);
@@ -78,7 +80,12 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, .logo {
+  h1, h2, h3 {
+    font-family: 'Cheesel', sans-serif;
+    font-weight: 400;
+  }
+
+  .logo {
     font-family: 'Lemon Milk', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -94,12 +101,53 @@
     padding: 0 24px;
   }
 
+  /* DOODLES */
+  .doodle-star {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    pointer-events: none;
+  }
+
+  @media (max-width: 700px) {
+    .doodle-star { display: none; }
+  }
+
+  /* POLAROIDS */
+  .polaroid {
+    background: var(--white);
+    padding: 10px 10px 30px;
+    box-shadow: 0 14px 26px rgba(51, 44, 34, 0.2);
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .polaroid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  .polaroid .cap {
+    font-family: 'Loverine', cursive;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-top: 8px;
+    color: var(--text);
+  }
+
+  .rot-l { transform: rotate(-6deg); }
+  .rot-r { transform: rotate(5deg); }
+  .rot-l2 { transform: rotate(-3deg); }
+  .rot-r2 { transform: rotate(4deg); }
+
   /* NAV */
   header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 250, 240, 0.92);
+    background: rgba(253, 246, 236, 0.92);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(240, 140, 33, 0.15);
   }
@@ -117,12 +165,11 @@
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--accent-dark);
-    letter-spacing: 0.5px;
   }
 
   .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 26px;
     list-style: none;
   }
 
@@ -179,39 +226,28 @@
 
   /* HERO */
   .hero {
-    padding: 90px 24px 70px;
+    padding: 70px 24px 60px;
     text-align: center;
-    background: linear-gradient(180deg, var(--tangerine) 0%, var(--butter) 55%, var(--bg) 100%);
+    background: linear-gradient(180deg, var(--tangerine) 0%, var(--butter) 65%, var(--bg) 100%);
     position: relative;
+    overflow: hidden;
   }
 
-  .avatar {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background: var(--white);
-    border: 4px solid var(--white);
-    box-shadow: var(--shadow);
-    margin: 0 auto 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Lemon Milk', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--tangerine-dark);
-    /* Reemplaza este div por <img src="tu-foto.jpg" alt="Vale Mora"> para usar tu propia foto */
+  .hero-photo {
+    width: 190px;
+    margin: 0 auto 24px;
   }
+
+  .hero-photo img { aspect-ratio: 4 / 5; }
 
   .hero h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     color: var(--white);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .hero .subtitle {
     font-family: 'Loverine', cursive;
-    text-transform: none;
     font-size: 1.8rem;
     color: var(--white);
     font-weight: 400;
@@ -262,12 +298,23 @@
 
   .btn-outline:hover { transform: translateY(-2px); background: var(--butter); }
 
+  /* STRIPE RIBBON */
+  .stripe-ribbon {
+    height: 46px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='60'%3E%3Crect width='40' height='60' fill='%23f3c9d6'/%3E%3Cpath d='M10 -10 Q20 5 10 20 Q0 35 10 50 Q20 65 10 80' stroke='%237a3b3b' stroke-width='9' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: 40px 60px;
+  }
+
+  /* WAVE DIVIDERS */
+  .wave-divider { line-height: 0; }
+  .wave-divider svg { display: block; width: 100%; height: 42px; }
+
   /* SECTIONS */
-  section { padding: 80px 0; }
+  section { padding: 76px 0; }
 
   .section-title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin-bottom: 10px;
     color: var(--text);
   }
@@ -279,6 +326,21 @@
     margin: 0 auto 48px;
     font-size: 0.98rem;
   }
+
+  /* ABOUT / SOBRE MI */
+  .about-bg { background: var(--bg); position: relative; overflow: hidden; }
+
+  .about-photos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 26px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .about-photos .polaroid { width: 190px; }
+  .about-photos .polaroid img { height: 220px; }
 
   /* DISCOUNTS */
   .discounts-grid {
@@ -300,10 +362,10 @@
   .discount-card:nth-child(2) { border-top-color: var(--blush); }
   .discount-card:nth-child(3) { border-top-color: var(--sea); }
 
-  .discount-card:hover { transform: translateY(-6px); }
+  .discount-card:hover { transform: translateY(-6px) rotate(-1deg); }
 
   .discount-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 8px;
   }
 
@@ -325,6 +387,7 @@
     color: var(--tangerine-dark);
     margin-bottom: 18px;
     letter-spacing: 1px;
+    transform: rotate(-2deg);
   }
 
   /* RESOURCES */
@@ -354,16 +417,17 @@
     padding: 4px 12px;
     border-radius: 20px;
     width: fit-content;
+    transform: rotate(-3deg);
   }
 
-  .resource-card h3 { font-size: 1.1rem; }
+  .resource-card h3 { font-size: 1.2rem; }
 
   .resource-card p { color: var(--text-light); font-size: 0.92rem; flex-grow: 1; }
 
   .resource-card a.btn { align-self: flex-start; }
 
   /* SOCIAL */
-  .social-bg { background: var(--sea); }
+  .social-bg { background: var(--sea); position: relative; overflow: hidden; }
   .social-bg .section-title,
   .social-bg .section-sub { color: var(--white); }
 
@@ -384,7 +448,7 @@
     transition: transform 0.2s;
   }
 
-  .social-card:hover { transform: translateY(-4px); }
+  .social-card:hover { transform: translateY(-4px) rotate(-2deg); }
 
   .social-card .icon {
     width: 42px;
@@ -437,7 +501,7 @@
   }
 
   /* CONTACT */
-  .contact-bg { background: linear-gradient(180deg, var(--bg) 0%, var(--butter) 100%); }
+  .contact-bg { background: linear-gradient(180deg, var(--bg) 0%, var(--butter) 100%); position: relative; overflow: hidden; }
 
   .contact-wrap {
     display: grid;
@@ -516,19 +580,22 @@
 
   .contact-direct .card .icon svg { width: 22px; height: 22px; }
 
-  .contact-direct .card h4 { font-size: 1rem; margin-bottom: 2px; }
+  .contact-direct .card h4 { font-size: 1rem; margin-bottom: 2px; font-family: 'Poppins', sans-serif; }
   .contact-direct .card p { font-size: 0.88rem; color: var(--text-light); }
 
   /* FOOTER */
   footer {
     text-align: center;
-    padding: 40px 24px;
+    padding: 50px 24px 40px;
     color: var(--text-light);
     font-size: 0.85rem;
-    background: var(--bg);
+    background: var(--butter);
   }
 
-  footer .logo { font-size: 1.2rem; margin-bottom: 10px; color: var(--accent-dark); }
+  footer .polaroid { width: 130px; margin-bottom: 18px; }
+  footer .polaroid img { height: 150px; }
+
+  footer .logo { font-size: 1.2rem; margin-bottom: 10px; color: var(--accent-dark); display: block; }
 </style>
 </head>
 <body>
@@ -538,6 +605,7 @@
     <a href="#inicio" class="logo">Vale Mora</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#descuentos">Descuentos</a></li>
       <li><a href="#recursos">Recursos</a></li>
       <li><a href="#redes">Redes</a></li>
@@ -551,10 +619,14 @@
 </header>
 
 <section class="hero" id="inicio">
+  <svg class="doodle-star" style="top:14%; left:8%; color:#ffffff; opacity:0.85;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="top:10%; right:10%; width:26px; height:26px; color:#ffffff; opacity:0.7;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="bottom:8%; left:14%; width:30px; height:30px; color:var(--blush); opacity:0.9;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+
   <div class="container">
-    <div class="avatar">VM</div>
-    <!-- Para usar tu foto real: reemplaza la línea de arriba por
-         <img class="avatar" src="tu-foto.jpg" alt="Vale Mora" style="object-fit:cover;"> -->
+    <div class="hero-photo polaroid rot-l">
+      <img src="photos/web/IMG_3229.jpg" alt="Vale Mora">
+    </div>
     <h1>Vale Mora</h1>
     <p class="subtitle">Fe, propósito &amp; lifestyle</p>
     <p class="bio">
@@ -565,6 +637,33 @@
     <div class="hero-cta">
       <a href="#descuentos" class="btn btn-primary">Ver descuentos</a>
       <a href="#contacto" class="btn btn-outline">Contactarme</a>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-ribbon"></div>
+
+<section class="about-bg" id="sobre-mi">
+  <svg class="doodle-star" style="top:6%; right:6%; color:var(--matcha); opacity:0.85;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="bottom:4%; left:5%; width:28px; height:28px; color:var(--sea); opacity:0.8;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+
+  <div class="container">
+    <h2 class="section-title">Un poco de mí</h2>
+    <p class="section-sub">Café, festivales, domingos cualquiera — la vida detrás del contenido.</p>
+
+    <div class="about-photos">
+      <div class="polaroid rot-l2">
+        <img src="photos/web/IMG_0502.jpg" alt="Vale Mora en un café">
+        <p class="cap">café ☕</p>
+      </div>
+      <div class="polaroid rot-r">
+        <img src="photos/web/IMG_5812.jpg" alt="Vale Mora en un festival">
+        <p class="cap">un domingo</p>
+      </div>
+      <div class="polaroid rot-l">
+        <img src="photos/web/IMG_6404.jpg" alt="Vale Mora retrato">
+        <p class="cap">por ahí</p>
+      </div>
     </div>
   </div>
 </section>
@@ -601,7 +700,12 @@
   </div>
 </section>
 
-<section id="recursos" style="background:var(--butter);">
+<div class="wave-divider">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z" fill="#f2d88f"/></svg>
+</div>
+
+<section id="recursos" style="background:var(--butter); position:relative; overflow:hidden;">
+  <svg class="doodle-star" style="top:8%; left:6%; color:var(--white); opacity:0.8;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
   <div class="container">
     <h2 class="section-title">Recursos</h2>
     <p class="section-sub">Herramientas y links que uso y recomiendo.</p>
@@ -632,7 +736,12 @@
   </div>
 </section>
 
+<div class="wave-divider">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C150,0 350,60 600,30 C850,0 1050,60 1200,30 L1200,60 L0,60 Z" fill="#6698cc"/></svg>
+</div>
+
 <section class="social-bg" id="redes">
+  <svg class="doodle-star" style="top:10%; right:8%; color:var(--butter); opacity:0.85;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
   <div class="container">
     <h2 class="section-title">Sígueme en redes</h2>
     <p class="section-sub">Contenido nuevo cada semana.</p>
@@ -663,7 +772,12 @@
   </div>
 </section>
 
-<section id="faqs">
+<div class="wave-divider">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z" fill="#fdf6ec"/></svg>
+</div>
+
+<section id="faqs" style="position:relative; overflow:hidden;">
+  <svg class="doodle-star" style="top:4%; left:5%; color:var(--tangerine); opacity:0.7;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
   <div class="container">
     <h2 class="section-title">Preguntas frecuentes</h2>
     <p class="section-sub">Lo que más me preguntan.</p>
@@ -699,6 +813,7 @@
 </section>
 
 <section class="contact-bg" id="contacto">
+  <svg class="doodle-star" style="top:6%; right:6%; color:var(--blush); opacity:0.8;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
   <div class="container">
     <h2 class="section-title">Contacto</h2>
     <p class="section-sub">¿Tienes una propuesta, pregunta o simplemente quieres saludar? Escríbeme.</p>
@@ -750,7 +865,10 @@
 </section>
 
 <footer>
-  <div class="logo">Vale Mora</div>
+  <div class="polaroid rot-l2" style="margin-left:auto; margin-right:auto;">
+    <img src="photos/web/IMG_9886.jpg" alt="Vale Mora">
+  </div>
+  <span class="logo">Vale Mora</span>
   <p>&copy; <span id="year"></span> Vale Mora. Todos los derechos reservados.</p>
 </footer>
 
