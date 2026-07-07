@@ -6,23 +6,64 @@
 <title>Vale Mora | Fe, propósito y lifestyle</title>
 <meta name="description" content="Descuentos exclusivos, recursos y contacto de Vale Mora. Lifestyle, propósito y marcas locales.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'Lemon Milk';
+    src: url('fonts/LemonMilk-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Lemon Milk';
+    src: url('fonts/LemonMilk-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Lemon Milk';
+    src: url('fonts/LemonMilk-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Lemon Milk';
+    src: url('fonts/LemonMilk-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Loverine';
+    src: url('fonts/Loverine.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Cheesel';
+    src: url('fonts/Cheesel.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
   :root {
-    --rosa: #f3d9d6;
-    --rosa-dark: #e7b8b3;
-    --lavanda: #e2d9f3;
-    --lavanda-dark: #c9b6ea;
-    --celeste: #d6ebf3;
-    --celeste-dark: #b6dcea;
-    --accent: #a084ba;
-    --accent-dark: #8a68a6;
-    --text: #4a3f4e;
-    --text-light: #8a7d8e;
-    --bg: #fffaf7;
+    --tangerine: #f08c21;
+    --tangerine-dark: #c96f10;
+    --butter: #f2d88f;
+    --butter-dark: #d9b85f;
+    --blush: #e36888;
+    --blush-dark: #c14468;
+    --sea: #6698cc;
+    --sea-dark: #4676a8;
+    --matcha: #b4b534;
+    --matcha-dark: #8f9021;
+    --accent: var(--tangerine);
+    --accent-dark: var(--tangerine-dark);
+    --text: #332c22;
+    --text-light: #7c7263;
+    --bg: #fffaf0;
     --white: #ffffff;
     --radius: 20px;
-    --shadow: 0 10px 30px rgba(160, 132, 186, 0.15);
+    --shadow: 0 10px 30px rgba(240, 140, 33, 0.15);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,7 +79,9 @@
   }
 
   h1, h2, h3, .logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lemon Milk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   a { text-decoration: none; color: inherit; }
@@ -56,9 +99,9 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 250, 247, 0.9);
+    background: rgba(255, 250, 240, 0.92);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(160, 132, 186, 0.15);
+    border-bottom: 1px solid rgba(240, 140, 33, 0.15);
   }
 
   nav {
@@ -71,7 +114,7 @@
   }
 
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--accent-dark);
     letter-spacing: 0.5px;
@@ -129,7 +172,7 @@
     .nav-links a {
       display: block;
       padding: 16px 24px;
-      border-bottom: 1px solid rgba(160,132,186,0.1);
+      border-bottom: 1px solid rgba(240,140,33,0.1);
     }
     .nav-toggle { display: flex; }
   }
@@ -138,7 +181,7 @@
   .hero {
     padding: 90px 24px 70px;
     text-align: center;
-    background: linear-gradient(180deg, var(--lavanda) 0%, var(--rosa) 50%, var(--bg) 100%);
+    background: linear-gradient(180deg, var(--tangerine) 0%, var(--butter) 55%, var(--bg) 100%);
     position: relative;
   }
 
@@ -153,23 +196,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.6rem;
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--accent-dark);
-    /* Reemplazá este div por <img src="tu-foto.jpg" alt="Vale Mora"> para usar tu propia foto */
+    color: var(--tangerine-dark);
+    /* Reemplaza este div por <img src="tu-foto.jpg" alt="Vale Mora"> para usar tu propia foto */
   }
 
   .hero h1 {
     font-size: 2.6rem;
-    color: var(--text);
+    color: var(--white);
     margin-bottom: 12px;
   }
 
   .hero .subtitle {
-    font-size: 1.15rem;
-    color: var(--accent-dark);
-    font-weight: 500;
+    font-family: 'Loverine', cursive;
+    text-transform: none;
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: 400;
     margin-bottom: 18px;
   }
 
@@ -191,28 +236,31 @@
     display: inline-block;
     padding: 14px 30px;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-family: 'Lemon Milk', sans-serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
     border: none;
   }
 
   .btn-primary {
-    background: var(--accent);
+    background: var(--blush);
     color: var(--white);
-    box-shadow: 0 8px 20px rgba(160, 132, 186, 0.35);
+    box-shadow: 0 8px 20px rgba(227, 104, 136, 0.35);
   }
 
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(160, 132, 186, 0.45); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(227, 104, 136, 0.45); }
 
   .btn-outline {
     background: var(--white);
-    color: var(--accent-dark);
-    border: 2px solid var(--accent);
+    color: var(--tangerine-dark);
+    border: 2px solid var(--tangerine);
   }
 
-  .btn-outline:hover { transform: translateY(-2px); background: var(--lavanda); }
+  .btn-outline:hover { transform: translateY(-2px); background: var(--butter); }
 
   /* SECTIONS */
   section { padding: 80px 0; }
@@ -245,12 +293,12 @@
     padding: 32px 28px;
     box-shadow: var(--shadow);
     text-align: center;
-    border-top: 5px solid var(--lavanda-dark);
+    border-top: 6px solid var(--tangerine);
     transition: transform 0.25s;
   }
 
-  .discount-card:nth-child(2) { border-top-color: var(--rosa-dark); }
-  .discount-card:nth-child(3) { border-top-color: var(--celeste-dark); }
+  .discount-card:nth-child(2) { border-top-color: var(--blush); }
+  .discount-card:nth-child(3) { border-top-color: var(--sea); }
 
   .discount-card:hover { transform: translateY(-6px); }
 
@@ -268,13 +316,13 @@
 
   .code-box {
     background: var(--bg);
-    border: 1.5px dashed var(--accent);
+    border: 1.5px dashed var(--tangerine);
     border-radius: 12px;
     padding: 12px 16px;
-    font-family: monospace;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--accent-dark);
+    font-family: 'Cheesel', monospace;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--tangerine-dark);
     margin-bottom: 18px;
     letter-spacing: 1px;
   }
@@ -298,10 +346,11 @@
 
   .resource-card .tag {
     display: inline-block;
-    background: var(--celeste);
-    color: var(--accent-dark);
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-family: 'Cheesel', sans-serif;
+    background: var(--sea);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 400;
     padding: 4px 12px;
     border-radius: 20px;
     width: fit-content;
@@ -314,7 +363,9 @@
   .resource-card a.btn { align-self: flex-start; }
 
   /* SOCIAL */
-  .social-bg { background: var(--lavanda); }
+  .social-bg { background: var(--sea); }
+  .social-bg .section-title,
+  .social-bg .section-sub { color: var(--white); }
 
   .social-grid {
     display: flex;
@@ -373,7 +424,7 @@
     right: 26px;
     top: 18px;
     font-size: 1.4rem;
-    color: var(--accent);
+    color: var(--tangerine);
     transition: transform 0.2s;
   }
 
@@ -386,7 +437,7 @@
   }
 
   /* CONTACT */
-  .contact-bg { background: linear-gradient(180deg, var(--bg) 0%, var(--celeste) 100%); }
+  .contact-bg { background: linear-gradient(180deg, var(--bg) 0%, var(--butter) 100%); }
 
   .contact-wrap {
     display: grid;
@@ -421,7 +472,7 @@
     width: 100%;
     padding: 13px 16px;
     border-radius: 12px;
-    border: 1.5px solid #ece0f0;
+    border: 1.5px solid #f0e3c4;
     font-family: 'Poppins', sans-serif;
     font-size: 0.95rem;
     background: var(--bg);
@@ -431,7 +482,7 @@
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent);
+    border-color: var(--tangerine);
   }
 
   .form-group textarea { resize: vertical; min-height: 110px; }
@@ -456,7 +507,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: var(--rosa);
+    background: var(--butter);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -502,13 +553,13 @@
 <section class="hero" id="inicio">
   <div class="container">
     <div class="avatar">VM</div>
-    <!-- Para usar tu foto real: reemplazá la línea de arriba por
+    <!-- Para usar tu foto real: reemplaza la línea de arriba por
          <img class="avatar" src="tu-foto.jpg" alt="Vale Mora" style="object-fit:cover;"> -->
     <h1>Vale Mora</h1>
     <p class="subtitle">Fe, propósito &amp; lifestyle</p>
     <p class="bio">
       Contenido sobre fe, propósito y estilo de vida — más lifestyle, productividad
-      y marcas locales que amo. Acá encontrás mis descuentos, recursos favoritos
+      y marcas locales que amo. Aquí encuentras mis descuentos, recursos favoritos
       y todas las formas de contactarme.
     </p>
     <div class="hero-cta">
@@ -521,7 +572,7 @@
 <section id="descuentos">
   <div class="container">
     <h2 class="section-title">Mis descuentos</h2>
-    <p class="section-sub">Usá mis códigos exclusivos al finalizar tu compra.</p>
+    <p class="section-sub">Usa mis códigos exclusivos al finalizar tu compra.</p>
     <div class="discounts-grid">
 
       <div class="discount-card">
@@ -529,7 +580,7 @@
         <p class="desc">20% de descuento en tu compra.</p>
         <div class="code-box">VALENTINAMORA20</div>
         <a href="#" class="btn btn-primary">Comprar ahora</a>
-        <!-- Reemplazá el href="#" por el link de afiliada de Lummia -->
+        <!-- Reemplaza el href="#" por el link de afiliada de Lummia -->
       </div>
 
       <div class="discount-card">
@@ -550,7 +601,7 @@
   </div>
 </section>
 
-<section id="recursos" style="background:var(--rosa);">
+<section id="recursos" style="background:var(--butter);">
   <div class="container">
     <h2 class="section-title">Recursos</h2>
     <p class="section-sub">Herramientas y links que uso y recomiendo.</p>
@@ -559,7 +610,7 @@
       <div class="resource-card">
         <span class="tag">Herramienta</span>
         <h3>TeraBox AI</h3>
-        <p>Creá presentaciones increíbles online. Conversión de texto a PPT en un clic, ideal para contenido y trabajo.</p>
+        <p>Crea presentaciones increíbles online. Conversión de texto a PPT en un clic, ideal para contenido y trabajo.</p>
         <a href="https://terabox.onelink.me/AVaT/vuau45vn" target="_blank" rel="noopener" class="btn btn-outline">Probar gratis</a>
       </div>
 
@@ -574,7 +625,7 @@
         <span class="tag">Próximamente</span>
         <h3>Más recursos</h3>
         <p>Apps, libros y herramientas que uso para productividad y propósito — se suman pronto.</p>
-        <a href="#contacto" class="btn btn-outline">Sugerime uno</a>
+        <a href="#contacto" class="btn btn-outline">Sugiéreme uno</a>
       </div>
 
     </div>
@@ -583,28 +634,28 @@
 
 <section class="social-bg" id="redes">
   <div class="container">
-    <h2 class="section-title">Seguime en redes</h2>
+    <h2 class="section-title">Sígueme en redes</h2>
     <p class="section-sub">Contenido nuevo cada semana.</p>
     <div class="social-grid">
 
       <a href="https://www.instagram.com/valeeeemora_" target="_blank" rel="noopener" class="social-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#a084ba" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#c14468" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         <span>Instagram</span>
       </a>
 
       <a href="https://www.tiktok.com/@valeeeemora_" target="_blank" rel="noopener" class="social-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#a084ba" stroke-width="1.8"><path d="M14 3v10.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 3c.5 3 2.5 5 5.5 5.3"/></svg>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#c14468" stroke-width="1.8"><path d="M14 3v10.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 3c.5 3 2.5 5 5.5 5.3"/></svg>
         <span>TikTok</span>
       </a>
 
       <a href="#" target="_blank" rel="noopener" class="social-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#a084ba" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#c14468" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg>
         <span>X</span>
       </a>
-      <!-- Reemplazá el href="#" de X por tu link real -->
+      <!-- Reemplaza el href="#" de X por tu link real -->
 
       <a href="https://wa.link/3kw5mq" target="_blank" rel="noopener" class="social-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#a084ba" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.6-6.7M20 12l-1-4-4 1"/></svg>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#c14468" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.6-6.7M20 12l-1-4-4 1"/></svg>
         <span>WhatsApp</span>
       </a>
 
@@ -620,27 +671,27 @@
 
       <details open>
         <summary>¿Cómo uso tus códigos de descuento?</summary>
-        <p>Solo tenés que copiar el código de la marca que te interese e ingresarlo en el checkout de su sitio web antes de finalizar la compra. Algunos también funcionan automáticamente al entrar desde mi link.</p>
+        <p>Solo tienes que copiar el código de la marca que te interese e ingresarlo en el checkout de su sitio web antes de finalizar la compra. Algunos también funcionan automáticamente al entrar desde mi link.</p>
       </details>
 
       <details>
         <summary>¿Trabajas con marcas para colaboraciones?</summary>
-        <p>¡Sí! Estoy abierta a colaboraciones que se alineen con mi contenido de fe, propósito y lifestyle. Escribime por el formulario de contacto o por WhatsApp con los detalles de tu propuesta.</p>
+        <p>¡Sí! Estoy abierta a colaboraciones que se alineen con mi contenido de fe, propósito y lifestyle. Escríbeme por el formulario de contacto o por WhatsApp con los detalles de tu propuesta.</p>
       </details>
 
       <details>
         <summary>¿Cómo puedo contactarte para publicidad?</summary>
-        <p>Podés escribirme directamente por WhatsApp o completar el formulario de la sección de Contacto con la información de tu marca y qué estás buscando.</p>
+        <p>Puedes escribirme directamente por WhatsApp o completar el formulario de la sección de Contacto con la información de tu marca y qué estás buscando.</p>
       </details>
 
       <details>
         <summary>¿Dónde puedo ver más de tu contenido?</summary>
-        <p>Me encontrás activa todos los días en Instagram y TikTok, donde comparto contenido sobre fe, propósito, productividad y mis marcas favoritas.</p>
+        <p>Me encuentras activa todos los días en Instagram y TikTok, donde comparto contenido sobre fe, propósito, productividad y mis marcas favoritas.</p>
       </details>
 
       <details>
         <summary>¿Mis códigos de descuento tienen vigencia?</summary>
-        <p>Los códigos pueden cambiar o vencer según cada marca. Si uno no te funciona, escribime y te confirmo el vigente.</p>
+        <p>Los códigos pueden cambiar o vencer según cada marca. Si uno no te funciona, escríbeme y te confirmo el vigente.</p>
       </details>
 
     </div>
@@ -650,7 +701,7 @@
 <section class="contact-bg" id="contacto">
   <div class="container">
     <h2 class="section-title">Contacto</h2>
-    <p class="section-sub">¿Tenés una propuesta, pregunta o simplemente querés saludar? Escribime.</p>
+    <p class="section-sub">¿Tienes una propuesta, pregunta o simplemente quieres saludar? Escríbeme.</p>
 
     <div class="contact-wrap">
       <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -679,7 +730,7 @@
 
       <div class="contact-direct">
         <a href="https://wa.link/3kw5mq" target="_blank" rel="noopener" class="card">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#a084ba" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.6-6.7M20 12l-1-4-4 1"/></svg></span>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c14468" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.6-6.7M20 12l-1-4-4 1"/></svg></span>
           <div>
             <h4>WhatsApp</h4>
             <p>Respuesta rápida para consultas y publicidad</p>
@@ -687,7 +738,7 @@
         </a>
 
         <a href="https://www.instagram.com/valeeeemora_" target="_blank" rel="noopener" class="card">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#a084ba" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/></svg></span>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c14468" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/></svg></span>
           <div>
             <h4>Instagram</h4>
             <p>@valeeeemora_</p>
