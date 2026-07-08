@@ -50,22 +50,29 @@
     --tangerine-dark: #c96f10;
     --butter: #f2d88f;
     --butter-dark: #d9b85f;
-    --blush: #e36888;
-    --blush-dark: #c14468;
+    --blush: #e85a86;
+    --blush-dark: #c1305e;
+    --pink: #f6a6c1;
+    --pink-dark: #d97a9e;
+    --purple: #8b5fd6;
+    --purple-dark: #6a3fb0;
     --sea: #6698cc;
     --sea-dark: #4676a8;
     --matcha: #b4b534;
     --matcha-dark: #8f9021;
     --maroon: #7a3b3b;
     --pink-stripe: #f3c9d6;
-    --accent: var(--tangerine);
-    --accent-dark: var(--tangerine-dark);
-    --text: #332c22;
-    --text-light: #7c7263;
+    --leopard-bg: #f6ead2;
+    --leopard-spot: #3d2b1f;
+    --leopard-fill: #cb8a3d;
+    --accent: var(--blush);
+    --accent-dark: var(--blush-dark);
+    --text: #3a2c38;
+    --text-light: #8a7286;
     --bg: #fdf6ec;
     --white: #ffffff;
     --radius: 20px;
-    --shadow: 0 10px 30px rgba(240, 140, 33, 0.15);
+    --shadow: 0 10px 30px rgba(232, 90, 134, 0.18);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -137,6 +144,23 @@
     color: var(--text);
   }
 
+  .sticker-wrap {
+    width: 190px;
+    text-align: center;
+  }
+
+  .sticker-photo {
+    width: 100%;
+    filter: drop-shadow(0 12px 18px rgba(58, 44, 56, 0.28));
+  }
+
+  .sticker-wrap .cap {
+    font-family: 'Loverine', cursive;
+    font-size: 1.05rem;
+    margin-top: 4px;
+    color: var(--text);
+  }
+
   .rot-l { transform: rotate(-6deg); }
   .rot-r { transform: rotate(5deg); }
   .rot-l2 { transform: rotate(-3deg); }
@@ -149,7 +173,7 @@
     z-index: 100;
     background: rgba(253, 246, 236, 0.92);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(240, 140, 33, 0.15);
+    border-bottom: 1px solid rgba(139, 95, 214, 0.18);
   }
 
   nav {
@@ -219,26 +243,45 @@
     .nav-links a {
       display: block;
       padding: 16px 24px;
-      border-bottom: 1px solid rgba(240,140,33,0.1);
+      border-bottom: 1px solid rgba(139,95,214,0.1);
     }
     .nav-toggle { display: flex; }
   }
 
   /* HERO */
   .hero {
-    padding: 70px 24px 60px;
+    padding: 70px 24px 50px;
     text-align: center;
-    background: linear-gradient(180deg, var(--tangerine) 0%, var(--butter) 65%, var(--bg) 100%);
+    background: linear-gradient(180deg, var(--blush) 0%, var(--purple) 55%, var(--bg) 100%);
     position: relative;
     overflow: hidden;
   }
 
-  .hero-photo {
-    width: 190px;
-    margin: 0 auto 24px;
+  .hero-photo-wrap {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 18px;
   }
 
-  .hero-photo img { aspect-ratio: 4 / 5; }
+  .leopard-blob {
+    position: absolute;
+    inset: 0;
+    border-radius: 44% 56% 58% 42% / 48% 44% 56% 52%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Crect width='70' height='70' fill='%23f6ead2'/%3E%3Cg fill='%23cb8a3d' stroke='%233d2b1f' stroke-width='3'%3E%3Cpath d='M15 15 q8 -6 14 0 q4 8 -4 12 q-10 4 -14 -4 q-2 -5 4 -8z'/%3E%3Cpath d='M45 10 q7 -5 12 1 q3 7 -4 10 q-9 3 -12 -4 q-1 -4 4 -7z'/%3E%3Cpath d='M30 40 q8 -6 15 0 q4 9 -5 13 q-11 4 -15 -5 q-2 -5 5 -8z'/%3E%3Cpath d='M55 45 q6 -5 11 1 q2 6 -4 9 q-8 3 -11 -3 q-1 -4 4 -7z'/%3E%3Cpath d='M5 50 q6 -5 10 0 q3 6 -3 9 q-8 3 -10 -3 q-1 -4 3 -6z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 46px 46px;
+    transform: rotate(-6deg) scale(1.08);
+    box-shadow: 0 16px 30px rgba(58, 44, 56, 0.25);
+  }
+
+  .hero-photo {
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 200px;
+    filter: drop-shadow(0 10px 18px rgba(58, 44, 56, 0.3));
+  }
 
   .hero h1 {
     font-size: 3rem;
@@ -292,17 +335,24 @@
 
   .btn-outline {
     background: var(--white);
-    color: var(--tangerine-dark);
-    border: 2px solid var(--tangerine);
+    color: var(--purple-dark);
+    border: 2px solid var(--purple);
   }
 
-  .btn-outline:hover { transform: translateY(-2px); background: var(--butter); }
+  .btn-outline:hover { transform: translateY(-2px); background: var(--pink); color: var(--white); }
 
   /* STRIPE RIBBON */
   .stripe-ribbon {
     height: 46px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='60'%3E%3Crect width='40' height='60' fill='%23f3c9d6'/%3E%3Cpath d='M10 -10 Q20 5 10 20 Q0 35 10 50 Q20 65 10 80' stroke='%237a3b3b' stroke-width='9' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-size: 40px 60px;
+  }
+
+  /* LEOPARD RIBBON */
+  .leopard-ribbon {
+    height: 46px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Crect width='70' height='70' fill='%23f6ead2'/%3E%3Cg fill='%23cb8a3d' stroke='%233d2b1f' stroke-width='3'%3E%3Cpath d='M15 15 q8 -6 14 0 q4 8 -4 12 q-10 4 -14 -4 q-2 -5 4 -8z'/%3E%3Cpath d='M45 10 q7 -5 12 1 q3 7 -4 10 q-9 3 -12 -4 q-1 -4 4 -7z'/%3E%3Cpath d='M30 40 q8 -6 15 0 q4 9 -5 13 q-11 4 -15 -5 q-2 -5 5 -8z'/%3E%3Cpath d='M55 45 q6 -5 11 1 q2 6 -4 9 q-8 3 -11 -3 q-1 -4 4 -7z'/%3E%3Cpath d='M5 50 q6 -5 10 0 q3 6 -3 9 q-8 3 -10 -3 q-1 -4 3 -6z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 46px 46px;
   }
 
   /* WAVE DIVIDERS */
@@ -355,7 +405,7 @@
     padding: 32px 28px;
     box-shadow: var(--shadow);
     text-align: center;
-    border-top: 6px solid var(--tangerine);
+    border-top: 6px solid var(--purple);
     transition: transform 0.25s;
   }
 
@@ -378,13 +428,13 @@
 
   .code-box {
     background: var(--bg);
-    border: 1.5px dashed var(--tangerine);
+    border: 1.5px dashed var(--purple);
     border-radius: 12px;
     padding: 12px 16px;
     font-family: 'Cheesel', monospace;
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--tangerine-dark);
+    color: var(--purple-dark);
     margin-bottom: 18px;
     letter-spacing: 1px;
     transform: rotate(-2deg);
@@ -488,7 +538,7 @@
     right: 26px;
     top: 18px;
     font-size: 1.4rem;
-    color: var(--tangerine);
+    color: var(--purple);
     transition: transform 0.2s;
   }
 
@@ -546,7 +596,7 @@
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--tangerine);
+    border-color: var(--purple);
   }
 
   .form-group textarea { resize: vertical; min-height: 110px; }
@@ -619,13 +669,16 @@
 </header>
 
 <section class="hero" id="inicio">
-  <svg class="doodle-star" style="top:14%; left:8%; color:#ffffff; opacity:0.85;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
-  <svg class="doodle-star" style="top:10%; right:10%; width:26px; height:26px; color:#ffffff; opacity:0.7;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
-  <svg class="doodle-star" style="bottom:8%; left:14%; width:30px; height:30px; color:var(--blush); opacity:0.9;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="top:12%; left:7%; color:#ffffff; opacity:0.9;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="top:8%; right:9%; width:24px; height:24px; color:#ffffff; opacity:0.75;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="bottom:20%; left:11%; width:28px; height:28px; color:var(--butter); opacity:0.95;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="bottom:10%; right:13%; width:34px; height:34px; color:#ffffff; opacity:0.85;" viewBox="0 0 60 60" fill="currentColor" stroke="none"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="top:36%; right:4%; width:20px; height:20px; color:var(--pink); opacity:0.9;" viewBox="0 0 60 60" fill="currentColor" stroke="none"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
 
   <div class="container">
-    <div class="hero-photo polaroid rot-l">
-      <img src="photos/web/IMG_3229.jpg" alt="Vale Mora">
+    <div class="hero-photo-wrap">
+      <div class="leopard-blob"></div>
+      <img class="hero-photo" src="photos/web/IMG_3229_sticker.png" alt="Vale Mora">
     </div>
     <h1>Vale Mora</h1>
     <p class="subtitle">Fe, propósito &amp; lifestyle</p>
@@ -644,8 +697,9 @@
 <div class="stripe-ribbon"></div>
 
 <section class="about-bg" id="sobre-mi">
-  <svg class="doodle-star" style="top:6%; right:6%; color:var(--matcha); opacity:0.85;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="top:6%; right:6%; color:var(--purple); opacity:0.85;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
   <svg class="doodle-star" style="bottom:4%; left:5%; width:28px; height:28px; color:var(--sea); opacity:0.8;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="top:40%; left:3%; width:20px; height:20px; color:var(--blush); opacity:0.8;" viewBox="0 0 60 60" fill="currentColor" stroke="none"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
 
   <div class="container">
     <h2 class="section-title">Un poco de mí</h2>
@@ -656,8 +710,8 @@
         <img src="photos/web/IMG_0502.jpg" alt="Vale Mora en un café">
         <p class="cap">café ☕</p>
       </div>
-      <div class="polaroid rot-r">
-        <img src="photos/web/IMG_5812.jpg" alt="Vale Mora en un festival">
+      <div class="sticker-wrap rot-r">
+        <img class="sticker-photo" src="photos/web/IMG_5812_sticker.png" alt="Vale Mora en un festival">
         <p class="cap">un domingo</p>
       </div>
       <div class="polaroid rot-l">
@@ -668,7 +722,9 @@
   </div>
 </section>
 
-<section id="descuentos">
+<section id="descuentos" style="position:relative; overflow:hidden;">
+  <svg class="doodle-star" style="top:6%; right:7%; color:var(--purple); opacity:0.8;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
+  <svg class="doodle-star" style="bottom:6%; left:6%; width:26px; height:26px; color:var(--blush); opacity:0.8;" viewBox="0 0 60 60" fill="currentColor" stroke="none"><path d="M30 5 L36 24 L56 24 L40 36 L46 55 L30 43 L14 55 L20 36 L4 24 L24 24 Z"/></svg>
   <div class="container">
     <h2 class="section-title">Mis descuentos</h2>
     <p class="section-sub">Usa mis códigos exclusivos al finalizar tu compra.</p>
@@ -863,6 +919,8 @@
     </div>
   </div>
 </section>
+
+<div class="leopard-ribbon"></div>
 
 <footer>
   <div class="polaroid rot-l2" style="margin-left:auto; margin-right:auto;">
